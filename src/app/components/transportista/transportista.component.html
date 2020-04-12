@@ -1,0 +1,21 @@
+<h1 class="animated bounce"> {{estudiante.nombre | uppercase }}
+    <small>
+        {{transportista }}
+    </small>
+</h1>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4">
+        <img src="{{estudiante.img}}" class="img-fluid" [alt]="estudiante.nombre" height="200px" width="200px">
+        <br>
+        <a [routerLink]="['/estudiantes']" class="btn btn-outline-danger btn-block">Regresar </a>
+    </div>
+    <div class="col-md-8">
+        <h3> {{estudiante.nombre}}</h3>
+        <hr>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat impedit veniam, voluptatum voluptatem iusto dolorem blanditiis fuga, consequatur nulla obcaecati delectus vel voluptas? Pariatur, fugit possimus tempore deleniti provident tempora.
+        </p>
+    </div>
+
+</div>
