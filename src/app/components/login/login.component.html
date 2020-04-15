@@ -1,16 +1,16 @@
 <div class="card">
     <h5 class="card-header">Iniciar sesión</h5>
-    <div class="card-body">
+    <div class="card-body text center">
         <form>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Correo electronico"> Correo Electronico</label>
-                        <input type="email" class="form-control" id="Correo electronico" aria-describedby="Correo electronico">
+                        <input formControlName="correo" type="email" class="form-control" id="Correo electronico" aria-describedby="Correo electronico">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="Contraseña ">Contraseña</label>
+                        <label formControlName="contrasenia" for="Contraseña ">Contraseña</label>
                         <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="form-group form-check col-md-6">
