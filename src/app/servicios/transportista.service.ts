@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Injectable } from '@angular/core'
+import { usuario } from './usuario.service';
+
 
 @Injectable({
     providedIn:'root'
@@ -12,19 +14,47 @@ export class TransportistaService{
     }
 
     getQuery(query:string){
-        const url = `/${query}`;
+        const url = `http://localhost:9898/${query}`;
         console.log(url);
         return this.http.get(url);
     }
     getTransportista():Observable<any>{
-        const url='transportista';
+        const url='empleado';
         return this.getQuery(url);
 
     }
     getTransportistaById(id:string)
     {
-        const url='transportista';
+        const url='empleado';
       return this.getQuery(url);
     }
 
+}
+
+export class Transportista extends usuario {
+    private sueldo: number;
+    private horario:string;
+
+
+    getSueldo(){
+        return this.sueldo
+    }
+    setSueldo( sueldo:number){
+        this.sueldo = sueldo;
+    }
+
+
+    getHorario(){
+        return this.horario
+    }
+    setHorario(horario:string){
+        this.horario = horario;
+    }
+
+
+
+    getAllData(){
+        return this.getNombre()+" "+this.getApellido()+" "+this.getEdad()+" "+this.getTelefono()+this.getSueldo()+" "+this.getHorario();
+    }
+   
 }

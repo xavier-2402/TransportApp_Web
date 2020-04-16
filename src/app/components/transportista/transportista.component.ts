@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { TransportistaService } from '../../servicios/transportista.service';
 
@@ -6,9 +6,9 @@ import { TransportistaService } from '../../servicios/transportista.service';
 @Component({
   selector: 'app-transportista',
   templateUrl: './transportista.component.html',
-  styleUrls: ['./transportista.component.css']
+  styles: []
 })
-export class TransportistaComponent {
+export class TransportistaComponent implements OnInit {
   transportista:any = {};
 
   constructor(private activatedRoute:ActivatedRoute,
@@ -22,6 +22,9 @@ export class TransportistaComponent {
               )
              
                }
+  ngOnInit(): void {
+    
+  }
 
  
 

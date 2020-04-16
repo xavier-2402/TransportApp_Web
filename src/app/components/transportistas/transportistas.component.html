@@ -1,1 +1,4 @@
-<p>transportistas works!</p>
+<div class=" row row-cols-1 row-cols-md-3">
+    <app-transportista-tarjeta *ngFor="let transportistafor of transportistas;let id =index;" [transportista]="transportistafor" [indice]="id"></app-transportista-tarjeta>
+
+</div>

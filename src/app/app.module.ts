@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -13,6 +13,13 @@ import { ModalTipoComponent } from './components/modal-tipo/modal-tipo.component
 import { TransportistasComponent } from './components/transportistas/transportistas.component';
 import { TransportistaTarjetaComponent } from './components/transportista-tarjeta/transportista-tarjeta.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
+import { TransportistaComponent } from './components/transportista/transportista.component';
+import { TransportistaService } from './servicios/transportista.service';
+import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
+import { VehiculoTarjetaComponent } from './components/vehiculo-tarjeta/vehiculo-tarjeta.component';
+import { FormularioServicioComponent } from './components/formulario-servicio/formulario-servicio.component';
+
 
 
 
@@ -30,14 +37,20 @@ import { FormularioUsuarioComponent } from './components/formulario-usuario/form
     TransportistasComponent,
     TransportistaTarjetaComponent,
     FormularioUsuarioComponent,
-
-  
+    TransportistaComponent,
+    VehiculoComponent,
+    VehiculosComponent,
+    VehiculoTarjetaComponent,
+    FormularioServicioComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     APPROUTING
   ],
-  providers: [],
+  providers: [
+    TransportistaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
