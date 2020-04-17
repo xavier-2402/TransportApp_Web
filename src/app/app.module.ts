@@ -22,6 +22,7 @@ import { FormularioServicioComponent } from './components/formulario-servicio/fo
 import { SolicitarServicioComponent } from './components/solicitar-servicio/solicitar-servicio.component';
 import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -52,7 +53,10 @@ import { MapaComponent } from './components/mapa/mapa.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    APPROUTING
+    APPROUTING,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAWTxxcLO1Q5Xg26NKfkiV4t30z7u7Qoe0'
+    })
   ],
   providers: [
     TransportistaService
