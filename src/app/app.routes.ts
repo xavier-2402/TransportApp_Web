@@ -9,6 +9,8 @@ import { FormularioServicioComponent } from './components/formulario-servicio/fo
 import { SolicitarServicioComponent } from './components/solicitar-servicio/solicitar-servicio.component';
 import { FormularioTransportistaComponent } from './components/formulario-transportista/formulario-transportista.component';
 import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
+import { MapaComponent } from './components/mapa/mapa.component';
+
 
 
 
@@ -22,8 +24,9 @@ const ROUTES: Routes = [
     { path: 'transportistas', component: TransportistasComponent },
     { path: 'formulario-usuario', component: FormularioUsuarioComponent}, 
     { path: 'transportista/:id', component:TransportistaComponent},
-    {path: 'solicitar-servicio', component:SolicitarServicioComponent},
+    { path: 'solicitar-servicio', component:SolicitarServicioComponent},
     { path: 'formulario-servicio',component:FormularioServicioComponent},
+    { path: 'mapa',component:MapaComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
