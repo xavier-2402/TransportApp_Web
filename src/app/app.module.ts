@@ -19,6 +19,7 @@ import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
 import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
 import { VehiculoTarjetaComponent } from './components/vehiculo-tarjeta/vehiculo-tarjeta.component';
 import { FormularioServicioComponent } from './components/formulario-servicio/formulario-servicio.component';
+import { SolicitarServicioComponent } from './components/solicitar-servicio/solicitar-servicio.component';
 
 
 
@@ -41,7 +42,8 @@ import { FormularioServicioComponent } from './components/formulario-servicio/fo
     VehiculoComponent,
     VehiculosComponent,
     VehiculoTarjetaComponent,
-    FormularioServicioComponent
+    FormularioServicioComponent,
+    SolicitarServicioComponent
   ],
   imports: [
     BrowserModule,

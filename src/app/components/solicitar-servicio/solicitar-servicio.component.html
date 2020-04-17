@@ -1,0 +1,40 @@
+<div class="card">
+    <h5 class="card-header"> Solicitar Servicio</h5>
+
+    <div class="card-body">
+        <form action="">
+
+            <div class="form-row">
+
+                <h5>Información del Destino</h5>
+
+                <div class="form-group ">
+                    <p>
+                        <br><br>
+
+
+                    </p>
+                    <label for="Punto de partida">Punto de partida:</label>
+
+                    <form class=" form-inline my-2 my-lg-0">
+                        <input type="text" name="Punto de partida" id="Punto de partida" class="form-control" placeholder="Punto de partida">
+                        <button type="submit" class="btn btn-primary  my-2 my-sm-0" [routerLink]="['/home']">Buscar </button>
+                    </form>
+                    <p>
+
+                    </p>
+                    <label for="Punto de partida">Punto de llegada:</label>
+                    <form class=" form-inline my-2 my-lg-0">
+                        <input type="text" name="Punto de Llegada" id="Punto de Llegada" class="form-control" placeholder="Punto de Llegada">
+                        <button type="submit" class="btn btn-primary  my-2 my-sm-0" [routerLink]="['/home']">Buscar </button>
+                    </form>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <p>
+                        <br> <br>
+
+                    </p>
+                    <label for="Cantidad de Km"> Cantidad de Km:</label>
+                    <input type="text" name="Cantidad de Km" id="Cantidad de Km" class="form-control" placeholder="Cantidad de Km">
+                </div>

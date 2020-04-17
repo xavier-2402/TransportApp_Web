@@ -19,10 +19,6 @@ const ROUTES: Routes = [
     { path: 'formulario-usuario', component: FormularioUsuarioComponent}, 
     { path: 'transportista/:id', component:TransportistaComponent},
     { path: 'formulario-servicio',component:FormularioServicioComponent},
-
-
-   
-   
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
