@@ -81,12 +81,13 @@
                         </select>
                     </div>
                     <button type="submit" class="btn btn-outline-primary float-xl-none
-                        t mb-5 " [routerLink]="['/home']">Registrarse </button>
+                        t mb-5 ">Registrarse </button>
 
-                    <button type="submit" class="btn btn-outline-primary float-xl-none
-                        mb-5 ">Añadir vehiculo </button>
+                    <button type="button" class="btn btn-outline-primary float-xl-none
+                        mb-5 " data-toggle="modal" data-target="#modalVehiculo">Añadir vehiculo </button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+<app-model-vehiculo></app-model-vehiculo>

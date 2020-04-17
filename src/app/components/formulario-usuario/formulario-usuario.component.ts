@@ -10,6 +10,7 @@ export class FormularioUsuarioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 }
 

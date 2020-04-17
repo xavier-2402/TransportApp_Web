@@ -8,6 +8,7 @@ import { TransportistasComponent } from './components/transportistas/transportis
 import { FormularioServicioComponent } from './components/formulario-servicio/formulario-servicio.component';
 import { SolicitarServicioComponent } from './components/solicitar-servicio/solicitar-servicio.component';
 import { FormularioTransportistaComponent } from './components/formulario-transportista/formulario-transportista.component';
+import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
 
 
 
