@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Injectable } from '@angular/core'
-import { usuario } from './usuario.service';
+
 
 
 @Injectable({
@@ -31,30 +31,3 @@ export class TransportistaService{
 
 }
 
-export class Transportista extends usuario {
-    private sueldo: number;
-    private horario:string;
-
-
-    getSueldo(){
-        return this.sueldo
-    }
-    setSueldo( sueldo:number){
-        this.sueldo = sueldo;
-    }
-
-
-    getHorario(){
-        return this.horario
-    }
-    setHorario(horario:string){
-        this.horario = horario;
-    }
-
-
-
-    getAllData(){
-        return this.getNombre()+" "+this.getApellido()+" "+this.getEdad()+" "+this.getTelefono()+this.getSueldo()+" "+this.getHorario();
-    }
-   
-}
