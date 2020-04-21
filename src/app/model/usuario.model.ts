@@ -1,16 +1,37 @@
-export class Usuario{
-    private id: number;
+export interface Usuario{
+    idPersona: number;
+    cedula:string;
+    nombre:string;
+    apellido: string;
+    telefono: string;
+    direccion:string;
+    usuario:string;
+    contrasenia:string;
+
+   /* private idPersona: number;
+    private cedula:string;
     private nombre:string;
     private apellido: string;
     private telefono: string;
-    private edad: string;
+    private direccion:string;
+    private usuario:string;
+    private contrasenia:string;
+ 
 
-    getId(){
-        return this.id;
+    getIdPersona(){
+        return this.idPersona;
     }
 
-    setId(id:number){
-        this.id=id;
+    setIdPersona(idPersona:number){
+        this.idPersona=idPersona;
+    }
+
+    getCedula(){
+        return this.cedula;
+    }
+    setCedula(cedula:string){
+        this.cedula=cedula;
+
     }
     getNombre (){
         return this.nombre;
@@ -33,11 +54,25 @@ export class Usuario{
         this.telefono = telefono;
 
     }
-    getEdad (){
-        return this.edad;
+    getDireccion(){
+        return this.direccion
     }
-    setEdad(edad:string){
-        this.edad = edad;
+    setDireccion(direccion:string){
+        this.direccion=direccion;
+    }
 
+    getUsuario(){
+        return this.usuario;
     }
+    setUsuario(usuario:string){
+        this.usuario=usuario;
+    }
+    getContrasenia(){
+        return this.contrasenia;
+    }
+    setContrasenia(contrasenia:string){
+        this.contrasenia=contrasenia;
+    }*/
+  
+
 }
