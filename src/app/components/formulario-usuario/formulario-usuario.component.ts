@@ -9,8 +9,10 @@ export class FormularioUsuarioComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {  
+  }
+  giveImage(event){
+    console.log(event);
   }
 }
 
