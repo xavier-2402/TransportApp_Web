@@ -23,6 +23,7 @@ import { SolicitarServicioComponent } from './components/solicitar-servicio/soli
 import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -54,6 +55,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     HttpClientModule,
     APPROUTING,
+    FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAWTxxcLO1Q5Xg26NKfkiV4t30z7u7Qoe0'
     })
