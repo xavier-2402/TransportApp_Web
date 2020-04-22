@@ -1,6 +1,6 @@
 
 export interface Transportista  {
-       idConductor:number;
+       idConductor: number;
 
   /*  getSueldo(){
         return this.sueldo
