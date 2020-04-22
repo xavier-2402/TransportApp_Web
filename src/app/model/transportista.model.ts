@@ -1,11 +1,8 @@
-import { Usuario } from './usuario.model';
 
-export class Transportista extends Usuario {
-    private sueldo: number;
-    private horario:string;
+export interface Transportista  {
+       idConductor:number;
 
-
-    getSueldo(){
+  /*  getSueldo(){
         return this.sueldo
     }
     setSueldo( sueldo:number){
@@ -25,5 +22,5 @@ export class Transportista extends Usuario {
     getAllData(){
         return this.getNombre()+" "+this.getApellido()+" "+this.getEdad()+" "+this.getTelefono()+this.getSueldo()+" "+this.getHorario();
     }
-   
+   */
 }

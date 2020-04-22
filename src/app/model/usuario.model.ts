@@ -1,12 +1,12 @@
-export interface Usuario{
+export interface Persona{
     idPersona: number;
-    cedula:string;
-    nombre:string;
+    cedula: string;
+    nombre: string;
     apellido: string;
     telefono: string;
-    direccion:string;
-    usuario:string;
-    contrasenia:string;
+    direccion: string;
+    usuario: string;
+    contrasenia: string;
 
    /* private idPersona: number;
     private cedula:string;
