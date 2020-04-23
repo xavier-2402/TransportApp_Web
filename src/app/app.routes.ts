@@ -13,10 +13,6 @@ import { MapaComponent } from './components/mapa/mapa.component';
 
 
 
-
-
-
-
 const ROUTES: Routes = [
     { path: 'home', component: LoginComponent },
     { path: 'cliente', component: FormularioClienteComponent },

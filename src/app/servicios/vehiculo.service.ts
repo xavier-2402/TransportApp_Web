@@ -12,30 +12,29 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class VehiculoService{
-    baseURL = environment.apiURL +'users/'
+    baseURL = environment.apiURL +'vehiculo/'
     constructor ( private http: HttpClient){
 
     }
 
     
-    getQuery(query:string){
+    getQuery(query: string){
         const url = `http://localhost:9898/${query}`;
         console.log(url);
         return this.http.get(url);
     }
-    getTransportista():Observable<any>{
-        const url='empleado';
+    getVehiculo(): Observable<any>{
+        const url='vehiculo';
         return this.getQuery(url);
 
     }
-    getTransportistaById(id:string)
-    {
-        const url='empleado';
+    getVehiculoById(id: string) {
+        const url = 'vehiculo';
       return this.getQuery(url);
     }
 
-    createTransportista(transportista:Vehiculo){
-        return this.http.post<Vehiculo>(this.baseURL,transportista);
+    createVehiculo(vehiculo: Vehiculo) {
+        return this.http.post<Vehiculo>(this.baseURL, vehiculo);
         
 
     }

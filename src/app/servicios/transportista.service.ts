@@ -11,30 +11,30 @@ import { environment } from '../../environments/environment';
     providedIn:'root'
 })
 
-export class TransportistaService{
-    baseURL = environment.apiURL +'users/'
-    constructor ( private http: HttpClient){
+export class TransportistaService {
+    baseURL = environment.apiURL + 'conductor/'
+    constructor( private http: HttpClient){
 
     }
 
-    getQuery(query:string){
+    getQuery(query: string){
         const url = `http://localhost:9898/${query}`;
         console.log(url);
         return this.http.get(url);
     }
-    getTransportista():Observable<any>{
-        const url='empleado';
+    getTransportista(): Observable<any>{
+        const url='conductor';
         return this.getQuery(url);
 
     }
-    getTransportistaById(id:string)
+    getTransportistaById(id: string)
     {
-        const url='empleado';
+        const url = 'conductor';
       return this.getQuery(url);
     }
 
-    createTransportista(transportista:Transportista){
-        return this.http.post<Transportista>(this.baseURL,transportista);
+    createTransportista(transportista: Transportista){
+        return this.http.post<Transportista>(this.baseURL, transportista);
         
 
     }
