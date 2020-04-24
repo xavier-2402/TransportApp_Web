@@ -1,7 +1,7 @@
 <div class="card">
     <h5 class="card-header"> Transportistas </h5>
     <div class="card-body">
-        <form action="">
+        <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value )">
             <h5>Información del vehículo</h5>
             <div class="form-row">
 
