@@ -7,6 +7,9 @@ import { CheckboxControlValueAccessor } from '@angular/forms';
     providedIn: 'root'
 })
 export class LoginService{
+
+    correoin:string;
+    contraseniain:string;
     constructor(private http: HttpClient) {
 
     }
@@ -22,6 +25,33 @@ export class LoginService{
         return this.getQuery(url);
 
     }
+    getDate(correoget:string,contraseniaget:string){
+
+        this.correoin=correoget;
+        this.contraseniain=contraseniaget;
+    }
+    postQuery(query: string) {
+        const url = `http://localhost:9898/${query}`;
+        console.log(url)
+
+        let body = {
+            emp_correo:this.correoin,
+            emp_contrasenia:this.contraseniain
+        }
+        let json = JSON.stringify(body);
+        let params = json;
+        let headers = new HttpHeaders().set('Content-Type',' application/json ');
+        console.log("body");
+        console.log(params);
+        return this.http.post(url, params, {headers: headers});
+
+    }
+    getCategorias(): Observable<any> {
+        const url = 'empleado';
+       
+        return this.postQuery(url);
+    }
+
 }
 export interface Persona {
     nombre: string,

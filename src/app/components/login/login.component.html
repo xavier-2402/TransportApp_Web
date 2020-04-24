@@ -1,17 +1,17 @@
 <div class="card">
     <h5 class="card-header">Iniciar sesión</h5>
     <div class="card-body text center">
-        <form>
+        <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value )">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Correo electronico"> Correo Electronico</label>
-                        <input form="correo" required pattern="email" type="email" class="form-control" id="Correo electronico" aria-describedby="Correo electronico">
+                        <input formControlName="correo" required pattern="email" type="email" class="form-control" id="Correo electronico" aria-describedby="Correo electronico">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label form="contrasenia" for="Contraseña">Contraseña</label>
-                        <input type="password" class="form-control" required id="exampleInputPassword1">
+                        <input formControlName="contrasenia" type="password" class="form-control" required id="exampleInputPassword1">
                     </div>
                     <div class="form-group form-check col-md-6">
                         <input type="checkbox" class="form-check-input" id="checkRecordar">
@@ -19,7 +19,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary" [routerLink]="['/solicitar-servicio']">Ingresar</button>
                     <small id="textiniciar" class="form-text text-muted">¿No tienes cuenta?</small>
-                    <button type="button" class="btn btn-primary" [routerLink]="['/formulario-usuario']">   
+                    <button (click)="getQuery()" [disabled]="signupForm.invalid" type="submit" [routerLink]="['/formulario-usuario']">   
                         Registrarme 
                     </button>
                 </div>

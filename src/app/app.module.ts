@@ -24,7 +24,7 @@ import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehicu
 import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
-
+import { ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -56,6 +56,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     APPROUTING,
     FormsModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAWTxxcLO1Q5Xg26NKfkiV4t30z7u7Qoe0'
     })
