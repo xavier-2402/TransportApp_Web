@@ -41,14 +41,14 @@ export class FormularioUsuarioComponent implements OnInit {
   }
 
   getQuery() {
-    this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,this.signupForm.value.correo,this.signupForm.value.telefono,this.signupForm.value.contrasenia)
+    this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
+      this.signupForm.value.correo,this.signupForm.value.telefono,this.signupForm.value.contrasenia,this.signupForm.value.direccion)
     
-        this.personaService.getCategorias().subscribe((data:Persona)=>{
+        this.personaService.getPersonas().subscribe((data:Persona)=>{
           console.log(data);
           
         });
-    
-        //idCategoria: this.signupForm.value.idCategoria,
+  
         console.log(this.signupForm.value.nombre);
 
     

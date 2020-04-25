@@ -11,18 +11,21 @@ export class PersonaService{
     nombrein:string;
     apellidoin:string;
     telefonoin:string;
+    direccionin:string;
     correoin:string;
     contraseniain:string;
     constructor(private http: HttpClient){
 
     }
 
-    getDate(nombreget: string,apellidoget:string,correoget:string,telefonoget:string,contraseniaget:string ){
+    getDate(nombreget: string,apellidoget:string,correoget:string,telefonoget:string,contraseniaget:string,direccionget:string ){
         this.nombrein = nombreget;
         this.apellidoin=apellidoget;
-        this.correoin=correoget;
         this.telefonoin=telefonoget;
+        this.correoin=correoget;
+        this.direccionin=direccionget;
         this.contraseniain=contraseniaget;
+        
        
     }
     getQuery(query: string) {
@@ -30,10 +33,15 @@ export class PersonaService{
         console.log(url)
 
         let body = {
-           emp_nombre: this.nombrein,
-            emp_apellido:this.apellidoin,
-            emp_correo:this.correoin,
-            emp_telefono:this.telefonoin
+          idPersona:1,
+          cedula:this.cedulain,
+          apellido:this.apellidoin,
+          nombre:this.nombrein,
+          correo:this.correoin,
+          direccion:this.direccionin,
+          telefono:this.telefonoin,
+          contrasenia:this.contraseniain,
+
         }
         let json = JSON.stringify(body);
         let params = json;
@@ -43,8 +51,8 @@ export class PersonaService{
         return this.http.post(url, params, {headers: headers});
 
     }
-    getCategorias(): Observable<any> {
-        const url = 'empleado';
+    getPersonas(): Observable<any> {
+        const url = 'persona';
        
         return this.getQuery(url);
     }

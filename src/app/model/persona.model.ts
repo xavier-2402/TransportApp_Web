@@ -5,7 +5,7 @@ export interface Persona{
     apellido: string;
     telefono: string;
     direccion: string;
-    usuario: string;
+    correo: string;
     contrasenia: string;
 
    /* private idPersona: number;
