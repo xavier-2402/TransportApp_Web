@@ -10,23 +10,33 @@ import { Persona } from 'src/app/servicios/login.service';
 export class FormularioUsuarioComponent implements OnInit {
 
   signupForm: FormGroup;
+  private emailPattern: any = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   constructor(private _builder: FormBuilder,private personaService:PersonaService) {
-    this.signupForm = this._builder.group(
+    this.signupForm = this._builder.group(  
       {
         cedula: ['',Validators.required],
         nombre: ['', Validators.required],
-        apellido: ['',Validators.required],
-        correo: ['',Validators.required],
-        telefono: ['',Validators.required],
-        contrasenia: ['',Validators.required]
+        apellido: ['',Validators.required ],
+        correo: ['',Validators.required,Validators.pattern(this.emailPattern)],
+        celular: ['',Validators.required],
+        contrasenia: ['',Validators.required],
+        contraseniaconfirmacion: ['',Validators.required]
       }
     )
  
     console.log("correcto")  
    }
+   get cedula() { return this.signupForm.get('cedula'); }
+   get nombre() { return this.signupForm.get('nombre'); }
+   get apellido() { return this.signupForm.get('apellido'); }
+   get correo() { return this.signupForm.get('correo'); }
+   get celular() { return this.signupForm.get('celular'); }
+   get contrasenia() { return this.signupForm.get('contrasenia'); }
+   get contraseniaconfirmacion() { return this.signupForm.get('contraseniaconfirmacion'); }
 
   ngOnInit(): void {  
     this.getQuery();
+  
     }
   giveImage(event){
     console.log(event);
@@ -41,18 +51,32 @@ export class FormularioUsuarioComponent implements OnInit {
   }
 
   getQuery() {
-    this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
-      this.signupForm.value.correo,this.signupForm.value.telefono,this.signupForm.value.contrasenia,this.signupForm.value.direccion)
+    if(this.signupForm.valid){
+      this.onResetForm();
+      this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
+        this.signupForm.value.correo,this.signupForm.value.telefono,this.signupForm.value.contrasenia,this.signupForm.value.direccion)
+      
+          this.personaService.getPersonas().subscribe((data:Persona)=>{
+            console.log(data);
+            
+          });
     
-        this.personaService.getPersonas().subscribe((data:Persona)=>{
-          console.log(data);
-          
-        });
+          console.log(this.signupForm.value.nombre);
+      console.log("correcto");
+    
+    }else{
+      console.log("incorrecto");
+    }
   
-        console.log(this.signupForm.value.nombre);
 
     
       }
+     
+      onResetForm(): void {
+        this.signupForm.reset();
+      }
+
+     
 
 }
 

@@ -13,54 +13,111 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for=" Cédula">Cédula: </label>
-                        <input formControlName="cedula" type="text" name="Cédula" id="Cédula" required class="form-control" placeholder="Cédula">
+                        <input type="text" formControlName="cedula" name="Cédula" id="Cédula" placeholder="Cédula">
+                        <div class="alert-danger" *ngIf="cedula.invalid && (cedula.dirty || cedula.touched)">
+                            <div class="container-error-message" *ngIf="cedula.errors.required">
+                                Cédula es obligatoria
+                            </div>
+                            <!--  <div class="container-error-message" *ngIf="cedula.errors.maxlength">
+                                Cédula debe tener 10 dígitos
+                            </div>-->
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Nombres">Nombres:</label>
-                        <input formControlName="nombre" type="text" name="Nombres" id="Nombres" required class="form-control" placeholder="Nombres">
+                        <input formControlName="nombre" type="text" name="Nombres" id="Nombres" placeholder="Nombres">
+                        <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+                            <div class="container-error-message" *ngIf="nombre.errors.required">
+                                Nombre es obligatorio
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Apellidos">Apellidos:</label>
-                        <input formControlName="apellido" type="text" name="Apellidos" id="Apellidos" required class="form-control" placeholder="Apellidos">
+                        <input formControlName="apellido" type="text" name="Apellidos" id="Apellidos" placeholder="Apellidos">
+                        <div class="alert-danger" *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)">
+                            <div class="container-error-message" *ngIf="apellido.errors.required">
+                                Apellido es obligatorio
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Dirección">Dirección:</label>
-                        <input formControlName="direccion" type="text" name="Dirección" id="Dirección" required class="form-control" placeholder="Dirección">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <button type="button" class="btn btn-outline-primary float-xl-none t mb-5">
+                            Agregar Direccion
+                        </button>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Celular">Celular:</label>
-                        <input formControlName="telefono" type="text" name="Celular" required id="Celular" class="form-control" placeholder="Celular">
+                        <input formControlName="celular" type="text" name="Celular" id="Celular" placeholder="Celular">
+                        <div class="alert-danger" *ngIf="celular.invalid && (celular.dirty || celular.touched)">
+                            <div class="container-error-message" *ngIf="celular.errors.required">
+                                Celular es obligatorio
+                            </div>
+                            <!-- <div class="container-error-message" *ngIf="celular.errors.minlength">
+                                Celular debe tener 10 dígitos
+                            </div>-->
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Correo Electronico">Correo Electronico:</label>
-                        <input formControlName="correo" type="text" name="Correo Electronico" required pattern="email" id="Correo Electronico" class="form-control" placeholder="Correo Electronico">
+                        <input formControlName="correo" type="text" name="Correo Electronico" pattern="email" id="Correo Electronico" placeholder="Correo Electronico">
+                        <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                            <div class="container-error-message" *ngIf="correo.errors.required">
+                                Correo es obligatorio
+                            </div>
+                            <!-- <div class="container-error-message" *ngIf="correo.errors.minlength">
+                                Correo debe tener minimo 6 caracteres
+                            </div>-->
+
+                        </div>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Contraseña ">Contraseña</label>
-                        <input formControlName="contrasenia" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña">
+                        <input formControlName="contrasenia" type="password" id="contrasenia" placeholder="Contraseña">
+                        <div class="alert-danger" *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)">
+                            <div class="container-error-message" *ngIf="contrasenia.errors.required">
+                                Contraseña es obligatoria
+                            </div>
+                            <!--  <div class="container-error-message" *ngIf="contrasenia.errors.minlength">
+                                Contraseña debe tener minimo 6 caracteres
+                            </div>-->
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Contraseña ">Confirmar Contraseña</label>
-                        <input formControlName="contraseniaconfirmacion" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña">
+                        <input formControlName="contraseniaconfirmacion" type="password" id="contraseniaconfirmacion" placeholder="Contraseña">
+                        <div class="alert-danger" *ngIf="contraseniaconfirmacion.invalid && (contraseniaconfirmacion.dirty || contraseniaconfirmacion.touched)">
+                            <div class="container-error-message" *ngIf="contraseniaconfirmacion.errors.required">
+                                Contraseña es obligatoria
+                            </div>
+                            <!-- <div class="container-error-message" *ngIf="contraseniaconfirmacion.errors.minlength">
+                                Contraseña debe tener minimo 6 caracteres
+                            </div>-->
+                        </div>
                     </div>
-                    <button (click)="getQuery()" [disabled]="signupForm.valid" type="submit" class="btn btn-outline-primary float-xl-none
+                    <button (click)="getQuery()" [disabled]="signupForm.valid" type="submit" class="btn btn-outline-primary float-xl-none 
                     t mb-5">
                     Guardar</button>
-                    <h4>Seleccione el tipo de usuario</h4>
-                    <button type="submit" class="btn btn-outline-primary float-xl-none
+                    <div class="form-group">
+                        <h4>Seleccione el tipo de usuario</h4>
+                        <button type="submit" class="btn btn-outline-primary float-xl-none
                     t mb-5" [routerLink]="['/cliente']">
                     Cliente</button>
 
-                    <button type="button" class="btn btn-outline-primary float-xl-none
+                        <button type="button" class="btn btn-outline-primary float-xl-none
                     t mb-5" [routerLink]="['/transportista']">   
                         Transportista
                     </button>
+                    </div>
 
 
                 </div>

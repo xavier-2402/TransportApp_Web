@@ -24,13 +24,13 @@ export class TransportistaService {
         return this.http.get(url);
     }
     getTransportista(): Observable<any>{
-        const url='conductor';
+        const url='empleado';
         return this.getQuery(url);
 
     }
     getTransportistaById(id: string)
     {
-        const url = 'conductor';
+        const url = 'empleado';
       return this.getQuery(url);
     }
 
