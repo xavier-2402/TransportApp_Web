@@ -10,11 +10,13 @@ import { SolicitarServicioComponent } from './components/solicitar-servicio/soli
 import { FormularioTransportistaComponent } from './components/formulario-transportista/formulario-transportista.component';
 import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
 import { MapaComponent } from './components/mapa/mapa.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
 const ROUTES: Routes = [
-    { path: 'home', component: LoginComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'home',component: HeaderComponent},
     { path: 'cliente', component: FormularioClienteComponent },
     { path: 'transportista', component: FormularioTransportistaComponent },
     { path: 'transportistas', component: TransportistasComponent },
@@ -22,8 +24,8 @@ const ROUTES: Routes = [
     { path: 'transportista/:id', component:TransportistaComponent},
     { path: 'solicitar-servicio', component:SolicitarServicioComponent},
     { path: 'formulario-servicio',component:FormularioServicioComponent},
-    { path: 'mapa',component:MapaComponent},
-    { path: '**', pathMatch: 'full', redirectTo: 'home' }
+    { path: 'formulario-servicio/mapa',component:MapaComponent},
+    { path: '**', pathMatch: 'full', redirectTo: 'login' }
 ];
 
 export const APPROUTING = RouterModule.forRoot(ROUTES);

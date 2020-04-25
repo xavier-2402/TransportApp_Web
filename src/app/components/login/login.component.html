@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card-center" style="width: 50  rem;">
     <h5 class="card-header">Iniciar sesión</h5>
     <div class="card-body text center">
         <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value )">
@@ -17,9 +17,9 @@
                         <input type="checkbox" class="form-check-input" id="checkRecordar">
                         <label class="form-check-label" for="checkRecordar">Recordar nombre de usuario </label>
                     </div>
-                    <button type="submit" class="btn btn-primary" [routerLink]="['/solicitar-servicio']">Ingresar</button>
+                    <button type="submit" class="btn btn-primary" [routerLink]="['/home']">Ingresar</button>
                     <small id="textiniciar" class="form-text text-muted">¿No tienes cuenta?</small>
-                    <button (click)="getQuery()" [disabled]="signupForm.invalid" type="submit" [routerLink]="['/formulario-usuario']">   
+                    <button type="submit" [routerLink]="['/formulario-usuario']" (click)="getQuery()" [disabled]="signupForm.valid">   
                         Registrarme 
                     </button>
                 </div>
