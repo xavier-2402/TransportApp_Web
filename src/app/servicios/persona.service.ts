@@ -45,7 +45,7 @@ export class PersonaService{
         }
         let json = JSON.stringify(body);
         let params = json;
-        let headers = new HttpHeaders().set('Content-Type',' application/json ');
+        let headers = new HttpHeaders().set('Content-Type','application/json ');
         console.log("body");
         console.log(params);
         return this.http.post(url, params, {headers: headers});

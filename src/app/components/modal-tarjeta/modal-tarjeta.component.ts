@@ -28,6 +28,7 @@ export class ModalTarjetaComponent implements OnInit {
   get cod_tarjeta() { return this.tarjetaForm.get('cod_tarjeta'); }
 
   ngOnInit(): void {
+   // this.postQuery();
   }
 
   
@@ -36,10 +37,10 @@ export class ModalTarjetaComponent implements OnInit {
     return values;
   }
 
-  getQuery() {
+  postQuery() {
    
-    this.tarjetaService.getDate(this.tarjetaForm.value.nombre,this.tarjetaForm.value.apellido,
-      this.tarjetaForm.value.correo,this.tarjetaForm.value.cedula)
+    this.tarjetaService.getDate(this.tarjetaForm.value.titular_tarjeta,this.tarjetaForm.value.numero_tarjeta,
+      this.tarjetaForm.value.fecha_cad_tarjeta,this.tarjetaForm.value.cod_tarjeta)
         this.tarjetaService.getTarjetas().subscribe((data:Tarjeta)=>{
           console.log(data);  
         });

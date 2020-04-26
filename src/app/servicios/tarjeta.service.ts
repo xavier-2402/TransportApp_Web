@@ -44,10 +44,10 @@ export class TarjetaService {
         console.log(url)
 
         let body = {
-          emp_identificacion:this.titularTarjetain,
-          emp_apellido:this.numeroTarjetain,
-          emp_nombre:this.fechaCaducidadin,
-          emp_correo:this.codSeguridadin,
+            titutlarTarjeta:this.titularTarjetain,
+            numeroTarjeta:this.numeroTarjetain,
+            fechaCaducidad:this.fechaCaducidadin,
+            codSeguridad:this.codSeguridadin,
 
 
         }
@@ -60,7 +60,7 @@ export class TarjetaService {
 
     }
     getTarjetas(): Observable<any> {
-        const url = 'empleado';
+        const url = 'tarjeta';
        
         return this.postQuery(url);
     }
