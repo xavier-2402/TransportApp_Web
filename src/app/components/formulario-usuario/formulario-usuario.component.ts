@@ -35,7 +35,7 @@ export class FormularioUsuarioComponent implements OnInit {
    get contraseniaconfirmacion() { return this.signupForm.get('contraseniaconfirmacion'); }
 
   ngOnInit(): void {  
-    this.getQuery();
+    
   
     }
   giveImage(event){
@@ -50,7 +50,7 @@ export class FormularioUsuarioComponent implements OnInit {
 
   }
 
-  getQuery() {
+postQuery() {
    
       this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
         this.signupForm.value.correo,this.signupForm.value.cedula,this.signupForm.value.celular,this.signupForm.value.contrasenia)

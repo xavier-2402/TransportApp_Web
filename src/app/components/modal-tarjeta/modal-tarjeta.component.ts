@@ -15,7 +15,7 @@ export class ModalTarjetaComponent implements OnInit {
     this.tarjetaForm = this._builder.group(  
       {
         titular_tarjeta: ['',Validators.required],
-        numero_tarjeta: ['', Validators.required],
+        numerotarjeta: ['', Validators.required],
         fecha_cad_tarjeta: ['',Validators.required ],
         cod_tarjeta: ['',Validators.required]   
       }
@@ -23,7 +23,7 @@ export class ModalTarjetaComponent implements OnInit {
     console.log("correcto")  
   }
   get titular_tarjeta() { return this.tarjetaForm.get('titular_tarjeta'); }
-  get numero_tarjeta() { return this.tarjetaForm.get('numero_tarjeta'); }
+  get numerotarjeta() { return this.tarjetaForm.get('numerotarjeta'); }
   get fecha_cad_tarjeta() { return this.tarjetaForm.get('fecha_cad_tarjeta'); }
   get cod_tarjeta() { return this.tarjetaForm.get('cod_tarjeta'); }
 
@@ -39,7 +39,7 @@ export class ModalTarjetaComponent implements OnInit {
 
   postQuery() {
    
-    this.tarjetaService.getDate(this.tarjetaForm.value.titular_tarjeta,this.tarjetaForm.value.numero_tarjeta,
+    this.tarjetaService.getDate(this.tarjetaForm.value.titular_tarjeta,this.tarjetaForm.value.numerotarjeta,
       this.tarjetaForm.value.fecha_cad_tarjeta,this.tarjetaForm.value.cod_tarjeta)
         this.tarjetaService.getTarjetas().subscribe((data:Tarjeta)=>{
           console.log(data);  
