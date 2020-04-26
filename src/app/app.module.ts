@@ -25,6 +25,7 @@ import { MapaComponent } from './components/mapa/mapa.component';
 import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
+import { ModalDireccionComponent } from './components/modal-direccion/modal-direccion.component';
 
 
 
@@ -49,7 +50,8 @@ import { ReactiveFormsModule} from '@angular/forms';
     FormularioServicioComponent,
     SolicitarServicioComponent,
     ModelVehiculoComponent,
-    MapaComponent
+    MapaComponent,
+    ModalDireccionComponent
   ],
   imports: [
     BrowserModule,
