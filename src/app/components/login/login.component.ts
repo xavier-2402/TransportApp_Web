@@ -17,13 +17,15 @@ export class LoginComponent implements OnInit {
         correo: ['', Validators.required],
         contrasenia: ['',Validators.required]
       }  
-    )
+    )      
   }
-
+  
 
      ngOnInit(): void {
        this.getQuery();
     }
+
+   
 
     enviar(values) {
       console.log(values);
