@@ -1,25 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+
+declare var  google;
 @Component({
   selector: 'app-mapa',
   templateUrl: './mapa.component.html',
   styleUrls: ['./mapa.component.css']
 })
-export class MapaComponent {
-  latitude = -2.866667;
-  longitude =  -78.933333;
-  zoom =16;
-  lat= -2.866653;
-  lng=  -78.933783;
+export class MapaComponent{
+  map=null;
 
-    
+  
+  latitude = -2.88437;
+  longitude =  -78.977749;
+  zoom =16;
+  lat= -2.904156;
+  lng=  -78.981186;
+
+ 
   onChoseLocation(event){
     console.log(event);
     this.lat = event.coords.lat;
     this.lng = event.coords.lng; 
   }
-  loadMap(){
-    const mapEle : HTMLElement = document.getElementById('map');
-    
+
+  loadMap() {
+    // create a new map by passing HTMLElement
+    const mapEle: HTMLElement = document.getElementById('map');
   }
+ 
 }
