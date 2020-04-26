@@ -53,7 +53,7 @@ export class FormularioUsuarioComponent implements OnInit {
   getQuery() {
    
       this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
-        this.signupForm.value.correo,this.signupForm.value.cedula)
+        this.signupForm.value.correo,this.signupForm.value.cedula,this.signupForm.value.celular,this.signupForm.value.contrasenia)
           this.personaService.getPersonas().subscribe((data:Persona)=>{
             console.log(data);  
           });

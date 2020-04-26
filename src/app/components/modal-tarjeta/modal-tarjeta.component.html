@@ -47,11 +47,9 @@
                                     <input formControlName="cod_tarjeta" type="text" name="Código de seguridad" required id="Código de seguridad" class="form-control" placeholder="Código de seguridad">
                                     <div class="alert-danger" *ngIf="cod_tarjeta.invalid && (cod_tarjeta.dirty || cod_tarjeta.touched)">
                                         <div class="container-error-message" *ngIf="cod_tarjeta.errors.required">
-                                            codigo de la tarjeta es obligatoria
+                                            Código de la tarjeta es obligatoria
                                         </div>
-                                        <!--<div class="container-error-message" *ngIf="cedula.errors.maxlength">
-                                            Cédula debe tener 10 dígitos
-                                        </div>-->
+
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary float-xl-none

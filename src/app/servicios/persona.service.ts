@@ -18,26 +18,28 @@ export class PersonaService{
 
     }
 
-    getDate(nombreget: string,apellidoget:string,correoget:string,cedulaget:string){
+    getDate(cedulaget:string,nombreget:string,apellidoget:string,telefonoget:string,correoget:string,contraseniaget:string){
         this.nombrein = nombreget;
         this.apellidoin=apellidoget;
         this.cedulain=cedulaget;
-        //this.telefonoin=telefonoget;
+        this.telefonoin=telefonoget;
         this.correoin=correoget;
        // this.direccionin=direccionget;
-       // this.contraseniain=contraseniaget;
+        this.contraseniain=contraseniaget;
         
        
     }
-    getQuery(query: string) {
+    postQuery(query: string) {
         const url = `http://localhost:9898/${query}`;
         console.log(url)
 
         let body = {
-          emp_identificacion:this.cedulain,
-          emp_apellido:this.apellidoin,
-          emp_nombre:this.nombrein,
-          emp_correo:this.correoin,
+          cedula:this.cedulain,
+          nombre:this.nombrein,
+          apellido:this.apellidoin,
+          telefono:this.telefonoin,
+          correo:this.correoin,
+          contrasenia:this.contraseniain
 
 
         }
@@ -50,9 +52,9 @@ export class PersonaService{
 
     }
     getPersonas(): Observable<any> {
-        const url = 'empleado';
+        const url = 'persona';
        
-        return this.getQuery(url);
+        return this.postQuery(url);
     }
     
 
