@@ -56,7 +56,8 @@ import { ModalTarjetaComponent } from './components/modal-tarjeta/modal-tarjeta.
     FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAWTxxcLO1Q5Xg26NKfkiV4t30z7u7Qoe0'
+      //apiKey: 'AIzaSyAWTxxcLO1Q5Xg26NKfkiV4t30z7u7Qoe0'
+      apiKey: 'AIzaSyA0x_w3k75qRF10ClTJgddm9C-8o_7D72k'
     })
   ],
   providers: [
