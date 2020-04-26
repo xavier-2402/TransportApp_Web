@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
-import { FormularioTransportistaComponent } from './components/formulario-transportista/formulario-transportista.component';
 import { APPROUTING } from './app.routes';
 import { ModalTipoComponent } from './components/modal-tipo/modal-tipo.component';
 import { TransportistasComponent } from './components/transportistas/transportistas.component';
@@ -38,7 +37,6 @@ import { ModalDireccionComponent } from './components/modal-direccion/modal-dire
     FooterComponent,
     LoginComponent,
     FormularioClienteComponent,
-    FormularioTransportistaComponent,
     ModalTipoComponent,
     TransportistasComponent,
     TransportistaTarjetaComponent,

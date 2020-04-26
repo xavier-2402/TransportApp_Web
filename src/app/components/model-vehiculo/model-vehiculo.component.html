@@ -17,21 +17,22 @@
 
                                 <div class="form-group">
                                     <label for="Nombre del propietario">Nombre del propietario:</label>
-                                    <input type="text" name="Nombre del propietario" required id="Nombre del propietario" class="form-control" placeholder="Nombre del propietario">
+                                    <input formControlName="nombre" type="text" name="Nombre del propietario" required id="Nombre del propietario" class="form-control" placeholder="Nombre del propietario">
                                 </div>
                                 <div class="form-group ">
                                     <label for="Matrícula">Matrícula:</label>
-                                    <input type="text" name="Matrícula" id="Matrícula" required class="form-control" placeholder="Matrícula">
+                                    <input formControlName="matricula" type="text" name="Matrícula" id="Matrícula" required class="form-control" placeholder="Matrícula">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group ">
                                     <label for="Placa">Placa:</label>
-                                    <input type="text" name="Placa" id="Placa" required class="form-control" placeholder="Placa">
+                                    <input formControlName="placa" type="text" name="Placa" id="Placa" required class="form-control" placeholder="Placa">
                                 </div>
                                 <div class="form-group ">
                                     <label for="Marca"> Marca:</label>
-                                    <select name="Marca" id=Marca class=" form-control"> 
+                                    <input formControlName="marca" type="text" name="Marca" id="Marca" required class="form-control" placeholder="Marca">
+                                    <!-- <select name="Marca" id=Marca class=" form-control"> 
                                         <option value= "Chevrolet">Seleccione </option>
                                         <option value= "Chevrolet">Chevrolet </option>
                                         <option value= "Hino">Hino </option>
@@ -39,7 +40,7 @@
                                         <option value= "Mazda">Mazda </option>
                                         <option value= "Mercedes Benz">Mercedes Benz </option>
                                         <option value= "Hyundai">Hyundai </option>
-                                     </select>
+                                     </select>-->
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -70,7 +71,7 @@
                                         <option value= "2012">2012 </option>
                                         <option value= "2011">2011 </option>
                                         <option value= "2010">2010 </option>
-                                        <option value= "2009 ">2009</option>
+                                        <option value= "2009">2009</option>
                                         <option value= "2008">2008 </option>
                                         <option value= "2007">2007 </option>
                                         <option value= "2006">2006 </option>
@@ -91,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
+                        <button (click)="getQuery()" [disabled]="signupForm.invalid" type="submit" class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
                     </form>
                 </div>
             </div>

@@ -17,7 +17,7 @@ export class FormularioUsuarioComponent implements OnInit {
         cedula: ['',Validators.required],
         nombre: ['', Validators.required],
         apellido: ['',Validators.required ],
-        correo: ['',Validators.required,Validators.pattern(this.emailPattern)],
+        correo: ['',Validators.required],
         celular: ['',Validators.required],
         contrasenia: ['',Validators.required],
         contraseniaconfirmacion: ['',Validators.required]
@@ -51,25 +51,15 @@ export class FormularioUsuarioComponent implements OnInit {
   }
 
   getQuery() {
-    if(this.signupForm.valid){
-      this.onResetForm();
+   
       this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
-        this.signupForm.value.correo,this.signupForm.value.telefono,this.signupForm.value.contrasenia,this.signupForm.value.direccion)
-      
+        this.signupForm.value.correo,this.signupForm.value.cedula)
           this.personaService.getPersonas().subscribe((data:Persona)=>{
             console.log(data);
             
           });
-    
           console.log(this.signupForm.value.nombre);
       console.log("correcto");
-    
-    }else{
-      console.log("incorrecto");
-    }
-  
-
-    
       }
      
       onResetForm(): void {
