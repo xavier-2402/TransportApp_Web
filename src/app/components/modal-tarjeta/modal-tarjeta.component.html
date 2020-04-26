@@ -1,0 +1,66 @@
+<div id="modalTarjeta" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"> Tarjeta de Crédito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="tarjetaForm" (ngSubmit)="enviar(tarjetaForm.value )">
+                        <div class="form-row">
+                            <div class="form-group col-md-8 ">
+                                <h5>Forma de pago</h5>
+                                <div class="form-group ">
+                                    <label for="Titular de la tarjeta">Titular de la tarjeta:</label>
+                                    <input formControlName="titular_tarjeta" type="text" name="Titular de la tarjeta" required id="Titular de la tarjeta" class="form-control" placeholder="Titular de la tarjeta">
+                                    <div class="alert-danger" *ngIf="titular_tarjeta.invalid && (titular_tarjeta.dirty || titular_tarjeta.touched)">
+                                        <div class="container-error-message" *ngIf="titular_tarjeta.errors.required">
+                                            Titular de la tarjeta es obligatoria
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Número de la tarjeta">Número de la tarjeta:</label>
+                                    <input formControlName="numero_tarjeta" type="text" name="Número de la tarjeta" required id="Número de la tarjeta" class="form-control" placeholder="Número de la tarjeta">
+                                    <div class="alert-danger" *ngIf="numero_tarjeta.invalid && (numero_tarjeta.dirty || numero_tarjeta.touched)">
+                                        <div class="container-error-message" *ngIf="numero_tarjeta.errors.required">
+                                            Número de la tarjeta es obligatorio
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Fecha">Fecha:</label>
+                                    <input formControlName="fecha_cad_tarjeta" type="text" name="Fecha" id="Fecha" required class="form-control" placeholder="Fecha">
+                                    <div class="alert-danger" *ngIf="fecha_cad_tarjeta.invalid && (fecha_cad_tarjeta.dirty || fecha_cad_tarjeta.touched)">
+                                        <div class="container-error-message" *ngIf="fecha_cad_tarjeta.errors.required">
+                                            fecha de caducidad de latarjeta es obligatoria
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Código de seguridad">Código de seguridad:</label>
+                                    <input formControlName="cod_tarjeta" type="text" name="Código de seguridad" required id="Código de seguridad" class="form-control" placeholder="Código de seguridad">
+                                    <div class="alert-danger" *ngIf="cod_tarjeta.invalid && (cod_tarjeta.dirty || cod_tarjeta.touched)">
+                                        <div class="container-error-message" *ngIf="cod_tarjeta.errors.required">
+                                            codigo de la tarjeta es obligatoria
+                                        </div>
+                                        <!--<div class="container-error-message" *ngIf="cedula.errors.maxlength">
+                                            Cédula debe tener 10 dígitos
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary float-xl-none
+                                    t mb-5" [routerLink]="['/home']">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>

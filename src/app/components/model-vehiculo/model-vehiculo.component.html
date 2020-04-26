@@ -17,22 +17,36 @@
 
                                 <div class="form-group">
                                     <label for="Nombre del propietario">Nombre del propietario:</label>
-                                    <input formControlName="nombre" type="text" name="Nombre del propietario" required id="Nombre del propietario" class="form-control" placeholder="Nombre del propietario">
+                                    <input formControlName="nombre_propietario" type="text" name="Nombre del propietario" required id="Nombre del propietario" class="form-control" placeholder="Nombre del propietario">
+                                    <div class="alert-danger" *ngIf="nombre_propietario.invalid && (nombre_propietario.dirty || nombre_propietario.touched)">
+                                        <div class="container-error-message" *ngIf="nombre_propietario.errors.required">
+                                            Nombre del propietario es obligatoria
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <label for="Matrícula">Matrícula:</label>
                                     <input formControlName="matricula" type="text" name="Matrícula" id="Matrícula" required class="form-control" placeholder="Matrícula">
+                                    <div class="alert-danger" *ngIf="matricula.invalid && (matricula.dirty || matricula.touched)">
+                                        <div class="container-error-message" *ngIf="matricula.errors.required">
+                                            Matricula es obligatoria
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <div class="form-group ">
                                     <label for="Placa">Placa:</label>
+                                    <div class="alert-danger" *ngIf="placa.invalid && (placa.dirty || matricula.touched)">
+                                        <div class="container-error-message" *ngIf="placa.errors.required">
+                                            Placa es obligatoria
+                                        </div>
+                                    </div>
                                     <input formControlName="placa" type="text" name="Placa" id="Placa" required class="form-control" placeholder="Placa">
                                 </div>
                                 <div class="form-group ">
                                     <label for="Marca"> Marca:</label>
-                                    <input formControlName="marca" type="text" name="Marca" id="Marca" required class="form-control" placeholder="Marca">
-                                    <!-- <select name="Marca" id=Marca class=" form-control"> 
+                                    <select formControlName="marca" name="Marca" id=Marca class=" form-control"> 
                                         <option value= "Chevrolet">Seleccione </option>
                                         <option value= "Chevrolet">Chevrolet </option>
                                         <option value= "Hino">Hino </option>
@@ -40,7 +54,7 @@
                                         <option value= "Mazda">Mazda </option>
                                         <option value= "Mercedes Benz">Mercedes Benz </option>
                                         <option value= "Hyundai">Hyundai </option>
-                                     </select>-->
+                                     </select>
                                 </div>
                             </div>
                             <div class="form-group col-md-6">

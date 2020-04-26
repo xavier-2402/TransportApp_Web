@@ -25,6 +25,7 @@ import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { ModalDireccionComponent } from './components/modal-direccion/modal-direccion.component';
+import { ModalTarjetaComponent } from './components/modal-tarjeta/modal-tarjeta.component';
 
 
 
@@ -49,7 +50,8 @@ import { ModalDireccionComponent } from './components/modal-direccion/modal-dire
     SolicitarServicioComponent,
     ModelVehiculoComponent,
     MapaComponent,
-    ModalDireccionComponent
+    ModalDireccionComponent,
+    ModalTarjetaComponent
   ],
   imports: [
     BrowserModule,

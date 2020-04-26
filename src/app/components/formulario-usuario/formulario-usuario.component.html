@@ -108,7 +108,7 @@
                     </div>
                     <h4>Seleccione el tipo de usuario</h4>
                     <div class="form-group col-md-6">
-                        <button type="submit" class="btn btn-outline-primary float-xl-none t mb-5" [routerLink]="['/cliente']">
+                        <button type="button" class="btn btn-outline-primary float-xl-none t mb-5" data-toggle="modal" data-target="#modalTarjeta">
                     Cliente</button>
 
                         <button type="button" class="btn btn-outline-primary float-xl-none t mb-5" data-toggle="modal" data-target="#modalVehiculo">   
@@ -127,3 +127,4 @@
     </div>
 </div>
 <app-model-vehiculo></app-model-vehiculo>
+<app-modal-tarjeta></app-modal-tarjeta>

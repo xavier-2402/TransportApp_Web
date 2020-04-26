@@ -15,17 +15,17 @@ export class ModelVehiculoComponent implements OnInit {
 
     this.signupForm = this._builder.group(  
       {
-      
-        nombre: ['', Validators.required],
+        nombre_propietario: ['', Validators.required],
         placa: ['',Validators.required ],
-        marca: ['',Validators.required],
-        matricula: ['',Validators.required],
-       
+        matricula: ['',Validators.required],     
       }
     )
  
     console.log("correcto")  
    }
+   get nombre_propietario() { return this.signupForm.get('nombre_propietario'); }
+   get placa() { return this.signupForm.get('placa'); }
+   get matricula() { return this.signupForm.get('matricula'); }
 
   ngOnInit(): void {
     this.getQuery();

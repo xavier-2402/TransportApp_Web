@@ -55,8 +55,7 @@ export class FormularioUsuarioComponent implements OnInit {
       this.personaService.getDate(this.signupForm.value.nombre,this.signupForm.value.apellido,
         this.signupForm.value.correo,this.signupForm.value.cedula)
           this.personaService.getPersonas().subscribe((data:Persona)=>{
-            console.log(data);
-            
+            console.log(data);  
           });
           console.log(this.signupForm.value.nombre);
       console.log("correcto");
@@ -65,9 +64,6 @@ export class FormularioUsuarioComponent implements OnInit {
       onResetForm(): void {
         this.signupForm.reset();
       }
-
-     
-
 }
 
 
