@@ -1,5 +1,4 @@
 import {RouterModule, Routes} from '@angular/router';
-import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
 import { BodyComponent } from './components/body/body.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
@@ -16,8 +15,6 @@ import { HeaderComponent } from './components/header/header.component';
 const ROUTES: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'home',component: HeaderComponent},
-    { path: 'cliente', component: FormularioClienteComponent },
-
     { path: 'transportistas', component: TransportistasComponent },
     { path: 'formulario-usuario', component: FormularioUsuarioComponent}, 
     { path: 'transportista/:id', component:TransportistaComponent},

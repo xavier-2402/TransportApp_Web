@@ -6,9 +6,7 @@ import { BodyComponent } from './components/body/body.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormularioClienteComponent } from './components/formulario-cliente/formulario-cliente.component';
 import { APPROUTING } from './app.routes';
-import { ModalTipoComponent } from './components/modal-tipo/modal-tipo.component';
 import { TransportistasComponent } from './components/transportistas/transportistas.component';
 import { TransportistaTarjetaComponent } from './components/transportista-tarjeta/transportista-tarjeta.component';
 import { FormularioUsuarioComponent } from './components/formulario-usuario/formulario-usuario.component';
@@ -37,8 +35,6 @@ import { ModalTarjetaComponent } from './components/modal-tarjeta/modal-tarjeta.
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    FormularioClienteComponent,
-    ModalTipoComponent,
     TransportistasComponent,
     TransportistaTarjetaComponent,
     FormularioUsuarioComponent,

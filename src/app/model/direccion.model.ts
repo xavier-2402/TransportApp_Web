@@ -3,5 +3,6 @@ export interface Direccion{
     provincia_dir: string;
     canton_dir: string;
     parroquia_dir: string;
+    barrio_dir:string;
     calle_dir: string;
 }

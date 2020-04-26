@@ -34,11 +34,11 @@
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="Fecha">Fecha:</label>
-                                    <input formControlName="fecha_cad_tarjeta" type="text" name="Fecha" id="Fecha" required class="form-control" placeholder="Fecha">
+                                    <label for="Fecha de caducidad">Fecha de caducidad:</label>
+                                    <input formControlName="fecha_cad_tarjeta" type="text" name="Fecha de caducidad" id="Fecha de caducidad" required class="form-control" placeholder="Fecha de caducidad">
                                     <div class="alert-danger" *ngIf="fecha_cad_tarjeta.invalid && (fecha_cad_tarjeta.dirty || fecha_cad_tarjeta.touched)">
                                         <div class="container-error-message" *ngIf="fecha_cad_tarjeta.errors.required">
-                                            fecha de caducidad de latarjeta es obligatoria
+                                            Fecha de caducidad de la tarjeta es obligatoria
                                         </div>
                                     </div>
                                 </div>

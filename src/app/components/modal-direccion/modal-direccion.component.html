@@ -1,1 +1,74 @@
-<p>modal-direccion works!</p>
+<div id="modalDireccion" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"> Tarjeta de Crédito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="direccionForm" (ngSubmit)="enviar(direccionForm.value )">
+                        <div class="form-row">
+                            <div class="form-group col-md-8 ">
+                                <h5>Forma de pago</h5>
+                                <div class="form-group ">
+                                    <label for="Provincia">Provincia:</label>
+                                    <input formControlName="provincia" type="text" name="Provincia" required id="Provincia" class="form-control" placeholder="Provincia">
+                                    <div class="alert-danger" *ngIf="provincia.invalid && (provincia.dirty || provincia.touched)">
+                                        <div class="container-error-message" *ngIf="provincia.errors.required">
+                                            Provincia es obligatoria
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Cantón">Cantón:</label>
+                                    <input formControlName="numero_tarjeta" type="text" name="Cantón" required id="Cantón" class="form-control" placeholder="Cantón">
+                                    <div class="alert-danger" *ngIf="canton.invalid && (canton.dirty || canton.touched)">
+                                        <div class="container-error-message" *ngIf="canton.errors.required">
+                                            Cantón es obligatorio
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Parroquia">Parroquia:</label>
+                                    <input formControlName="parroquia" type="text" name="Parroquia" id="Parroquia" required class="form-control" placeholder="Parroquia">
+                                    <div class="alert-danger" *ngIf="parroquia.invalid && (parroquia.dirty || parroquia.touched)">
+                                        <div class="container-error-message" *ngIf="parroquia.errors.required">
+                                            Parroquia es obligatoria
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Barrio">Barrio:</label>
+                                    <input formControlName="barrio" type="text" name="Barrio" required id="Barrio" class="form-control" placeholder="Barrio">
+                                    <div class="alert-danger" *ngIf="barrio.invalid && (barrio.dirty || barrio.touched)">
+                                        <div class="container-error-message" *ngIf="barrio.errors.required">
+                                            Barrio es obligatorio
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="Calle">Calle:</label>
+                                    <input formControlName="calle" type="text" name="Calle" required id="Calle" class="form-control" placeholder="Calle">
+                                    <div class="alert-danger" *ngIf="calle.invalid && (calle.dirty || calle.touched)">
+                                        <div class="container-error-message" *ngIf="calle.errors.required">
+                                            Calle es obligatoria
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <button (click)="getQuery()" [disabled]="direccionForm.valid" type="submit" class="btn btn-primary float-xl-none
+                                    t mb-5" [routerLink]="['/home']">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
