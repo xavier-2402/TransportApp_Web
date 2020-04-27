@@ -22,9 +22,6 @@ export class TransportistasComponent implements OnInit {
      })
    }
 
-  
-  
-
   ngOnInit(): void {
     this.getTransportista();
   }

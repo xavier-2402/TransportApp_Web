@@ -13,7 +13,7 @@ import { environment } from '../../environments/environment';
 
 export class TransportistaService {
     baseURL = environment.apiURL + 'conductor/'
-    direccionin:string
+    direccionin: string
     constructor( private http: HttpClient){
 
     }
@@ -24,13 +24,13 @@ export class TransportistaService {
         return this.http.get(url);
     }
     getTransportista(): Observable<any>{
-        const url='empleado';
+        const url = 'persona';
         return this.getQuery(url);
 
     }
     getTransportistaById(id: string)
     {
-        const url = 'empleado';
+        const url = 'persona';
       return this.getQuery(url);
     }
 

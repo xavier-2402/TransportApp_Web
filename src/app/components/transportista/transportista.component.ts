@@ -15,8 +15,7 @@ export class TransportistaComponent implements OnInit {
               private transportistaService: TransportistaService) {
                 this.activatedRoute.params.subscribe(
                   params =>{
-                      console.log(params['id']);
-                      
+                      console.log(params['id']);                     
                       this.transportista= this.transportistaService.getTransportistaById(params['id']);
                   }
               )
