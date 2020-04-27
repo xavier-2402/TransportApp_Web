@@ -12,13 +12,13 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 })
 
 export class VehiculoService{
+    nombre_propietarioin:string;
     matriculain: string;
     tipoin: string;
     colorin: string;
     marcain: string;
     placain: string;
-    anioin: string;
-    baseURL = environment.apiURL + 'vehiculo/';
+    anioin: number;
     constructor( private http: HttpClient){
     }
 
@@ -38,12 +38,9 @@ export class VehiculoService{
       return this.getQuery(url);
     }
 
-    createVehiculo(vehiculo: Vehiculo) {
-        return this.http.post<Vehiculo>(this.baseURL, vehiculo);
-        
-
-    }
-    getDate(matriculaget: string, tipoget: string , colorget: string , marcaget: string, placaget: string, anioget: string){
+    getDate( matriculaget: string, tipoget: string , 
+        colorget: string , marcaget: string, placaget: string, anioget:number){
+       // this.nombre_propietarioin=nombre_propietarioget;
         this.matriculain = matriculaget;
         this.tipoin = tipoget;
         this.colorin = colorget;        
@@ -56,6 +53,7 @@ export class VehiculoService{
         console.log(url)
 
         let body = {
+            
         v_matricula: this.matriculain,
         v_tipo: this.tipoin,
         v_color: this.colorin,
@@ -73,7 +71,7 @@ export class VehiculoService{
 
     }
     getVehiculos(): Observable<any> {
-        const url = 'empleado';
+        const url = 'vehiculo';
        
         return this.postQuery(url);
     }

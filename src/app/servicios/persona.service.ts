@@ -19,9 +19,9 @@ export class PersonaService{
     }
 
     getDate(cedulaget:string,nombreget:string,apellidoget:string,telefonoget:string,correoget:string,contraseniaget:string){
+        this.cedulain=cedulaget;
         this.nombrein = nombreget;
         this.apellidoin=apellidoget;
-        this.cedulain=cedulaget;
         this.telefonoin=telefonoget;
         this.correoin=correoget;
        // this.direccionin=direccionget;

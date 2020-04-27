@@ -44,9 +44,8 @@ export class ModalDireccionComponent implements OnInit {
         this.direccionService.getDirecciones().subscribe((data:Direccion)=>{
           console.log(data);  
         });
-        console.log(this.direccionForm.value.nombre);
+        console.log(this.direccionForm.value.provincia);
     console.log(" Direccion correcta");
-    location.reload();
     }
    
     onResetForm(): void {

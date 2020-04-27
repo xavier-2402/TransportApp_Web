@@ -29,6 +29,10 @@ export class ModelVehiculoComponent implements OnInit {
         matricula: ['',Validators.required], 
         descripcion: ['',Validators.required ],
         tarifa: ['',Validators.required],
+        marca: ['',Validators.required],
+        color: ['',Validators.required],
+        tipo: ['',Validators.required],
+        anio: ['',Validators.required],
       }
     )
 
@@ -40,6 +44,10 @@ export class ModelVehiculoComponent implements OnInit {
    get matricula() { return this.vehiculoForm.get('matricula'); }
    get descripcion() { return this.vehiculoForm.get('descripcion'); }
    get tarifa() { return this.vehiculoForm.get('tarifa'); }
+   get marca(){return this.vehiculoForm.get('marca');}
+   get color(){return this.vehiculoForm.get('color')}
+   get tipo(){return this.vehiculoForm.get('tipo');}
+   get anio(){return this.vehiculoForm.get('anio');}
 
 
   ngOnInit(): void {
@@ -51,23 +59,23 @@ export class ModelVehiculoComponent implements OnInit {
     return values;
 
   }
-/*
+
   postQuery() {
    
-    this.vehiculoService.getDate(this.vehiculoForm.value.nombre,this.vehiculoForm.value.placa,
-      this.vehiculoForm.value.marca,this.vehiculoForm.value.matricula, this.vehiculoForm.value.anio, 
-      this.vehiculoForm.value.color)
+    this.vehiculoService.getDate(this.vehiculoForm.value.matricula,this.vehiculoForm.value.tipo,
+      this.vehiculoForm.value.color,this.vehiculoForm.value.marca, this.vehiculoForm.value.placa, 
+      this.vehiculoForm.value.anio)
       this.vehiculoService.getVehiculos().subscribe( ( data: Vehiculo) =>{
           console.log(data); 
         });
         console.log(this.vehiculoForm.value.nombre);
     console.log("correcto");
     }
-   */
+   
   createTarifa(){
     this.tarifaService.getDate(this.vehiculoForm.value.descripcion, this.vehiculoForm.value.tarifa)
   this.tarifaService.getTarifas().subscribe((data:Tarifa)=>{
-    
+    console.log(data);   
     });
     console.log(this.vehiculoForm.value.tarifa, this.vehiculoForm.value.descripcion);
     console.log( " correcto " );
