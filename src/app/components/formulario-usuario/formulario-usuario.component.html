@@ -84,7 +84,7 @@
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Contraseña ">Contraseña</label>
-                        <input formControlName="contrasenia" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña">
+                        <input formControlName="contrasenia" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña" [formControl]="signupForm.controls['contrasenia']">
                         <div class="alert-danger" *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)">
                             <div class="container-error-message" *ngIf="contrasenia.errors.required">
                                 Contraseña es obligatoria
@@ -96,7 +96,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="Contraseña ">Confirmar Contraseña</label>
-                        <input formControlName="contraseniaconfirmacion" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña">
+                        <input formControlName="contraseniaconfirmacion" type="password" class="form-control" id="exampleInputPassword1" required placeholder="Contraseña" [formControl]="signupForm.controls['contraseniaconfirmacion']">
                         <div class="alert-danger" *ngIf="contraseniaconfirmacion.invalid && (contraseniaconfirmacion.dirty || contraseniaconfirmacion.touched)">
                             <div class="container-error-message" *ngIf="contraseniaconfirmacion.errors.required">
                                 Contraseña es obligatoria

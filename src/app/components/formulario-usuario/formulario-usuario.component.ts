@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PersonaService } from '../../servicios/persona.service';
 import { Persona } from 'src/app/servicios/login.service';
+import { ValidatorFn, AbstractControl} from '@angular/forms';
 @Component({
   selector: 'app-formulario-usuario',
   templateUrl: './formulario-usuario.component.html',
@@ -23,6 +24,15 @@ export class FormularioUsuarioComponent implements OnInit {
         contraseniaconfirmacion: ['',Validators.required]
       }
     )
+    this.signupForm .get('contraseniaconfirmacion').setValidators(
+      CustomValidators.equals(this.signupForm.get('contrasenia'))
+    );
+
+  console.log("correcto")  
+ XMLDocument}
+ onSubmit(): void {
+  const contrasenia = this.signupForm.get('contrasenia').value as string;
+        
  
     console.log("correcto")  
    }
@@ -47,13 +57,14 @@ export class FormularioUsuarioComponent implements OnInit {
     console.log(values);
 
     return values;
- 
+
   }
+  
 
 postQuery() {
    
       this.personaService.getDate(this.signupForm.value.cedula,this.signupForm.value.nombre,
-        this.signupForm.value.apellido,this.signupForm.value.telefono,this.signupForm.value.correo,this.signupForm.value.contrasenia)
+        this.signupForm.value.apellido,this.signupForm.value.correo,this.signupForm.value.celular,this.signupForm.value.contrasenia)
           this.personaService.getPersonas().subscribe((data:Persona)=>{
             console.log(data);  
           });
@@ -61,9 +72,17 @@ postQuery() {
       console.log("correcto");
       }
      
-      onResetForm(): void {
-        this.signupForm.reset();
-      }
 }
+function equalsValidator(otherControl: AbstractControl): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} => {
+    const value: any = control.value;
+    const otherValue: any = otherControl.value;
+    return otherValue === value ? null : { 'notEquals': { value, otherValue } };
+  };
+}
+export const CustomValidators = {
+  equals: equalsValidator
+};
+
 
 
