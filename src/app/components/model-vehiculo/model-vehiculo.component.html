@@ -74,7 +74,7 @@
                                     <input formControlName="anio" type="number" name="Anio" id="Anio" required class="form-control" placeholder="Anio">
                                     <div class="alert-danger" *ngIf="anio.invalid && (anio.dirty || anio.touched)">
                                         <div class="container-error-message" *ngIf="anio.errors.required">
-                                            Año es obligatorio
+                                            Año es obligatori
                                         </div>
                                     </div>
 
@@ -117,7 +117,7 @@
                             </div>
 
                         </div>
-                        <button (click)="postQuery()" (click)="createTarifa()" [disabled]="vehiculoForm.invalid" type="submit " class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
+                        <button (click)="postQuery()" (click)="createTarifa()" onclick="alert('Datos Guardados correctamente')" [disabled]="vehiculoForm.invalid" type="submit " class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
                     </form>
                 </div>
             </div>

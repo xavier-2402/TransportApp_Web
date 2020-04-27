@@ -76,8 +76,10 @@ export class ModelVehiculoComponent implements OnInit {
     this.tarifaService.getDate(this.vehiculoForm.value.descripcion, this.vehiculoForm.value.tarifa)
   this.tarifaService.getTarifas().subscribe((data:Tarifa)=>{
     console.log(data);   
+    alert("mensaje de alerta");
     });
     console.log(this.vehiculoForm.value.tarifa, this.vehiculoForm.value.descripcion);
     console.log( " correcto " );
+    
   }
  }
