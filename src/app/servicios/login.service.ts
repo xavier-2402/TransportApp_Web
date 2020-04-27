@@ -63,10 +63,22 @@ export class LoginService{
           )
           .pipe(map(data => data));
       }
-
+    
+      setUser(user: Persona): void {
+        let user_string = JSON.stringify(user);
+        localStorage.setItem("currentUser", user_string);
+      }
+    
+      setToken(token): void {
+        localStorage.setItem("accessToken", token);
+      }
+    
+      getToken() {
+        return localStorage.getItem("accessToken");
+      }
 }
 export interface Persona {
-    nombre: string;
+    correo: string;
     contrasenia: string ;
     id?: number;
 }
