@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
 import { ModalDireccionComponent } from './components/modal-direccion/modal-direccion.component';
 import { ModalTarjetaComponent } from './components/modal-tarjeta/modal-tarjeta.component';
+import { VehiculoService } from './servicios/vehiculo.service';
 
 
 
@@ -61,7 +62,8 @@ import { ModalTarjetaComponent } from './components/modal-tarjeta/modal-tarjeta.
     })
   ],
   providers: [
-    TransportistaService
+    TransportistaService,
+    VehiculoService
   ],
   bootstrap: [AppComponent]
 })

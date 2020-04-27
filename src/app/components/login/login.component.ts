@@ -10,33 +10,35 @@ import { LoginService, Persona } from '../../servicios/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  signupForm: FormGroup;
+  loginForm: FormGroup;
   constructor(private _builder: FormBuilder,private loginService:LoginService) {
-    this.signupForm = this._builder.group(
+    this.loginForm = this._builder.group(
       {
         correo: ['', Validators.required],
         contrasenia: ['',Validators.required]
       }  
-    )      
+    )     
   }
-  
+  get correo() { return this.loginForm.get('correo'); }
+  get contrasenia() { return this.loginForm.get('contrasenia'); }
 
      ngOnInit(): void {
-       this.getQuery();
+     
     }
-
-   
 
     enviar(values) {
       console.log(values);
-  
       return values;
-  
     }
+    Validar(){
+      if(this.loginForm.value.correo=="xavier.y.2013@gmail.com"&& this.loginForm.value.contrasenia=="desarrolllo"){
+        console.log("login correcto")
 
-
-    getQuery() {
-      this.loginService.getDate(this.signupForm.value.nombre,this.signupForm.value.correo)
+      }
+    }
+   
+    postQuery() {
+      this.loginService.getDate(this.loginForm.value.correo,this.loginForm.value.contrasenia)
       
           this.loginService.getCategorias().subscribe((data:Persona)=>{
             console.log(data);
@@ -44,7 +46,8 @@ export class LoginComponent implements OnInit {
           });
       
           //idCategoria: this.signupForm.value.idCategoria,
-          console.log(this.signupForm.value.nombre);
+          
+          
   
       
         }

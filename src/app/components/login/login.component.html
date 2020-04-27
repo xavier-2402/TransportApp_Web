@@ -1,25 +1,38 @@
 <div class="card-center" style="width: 50  rem;">
     <h5 class="card-header">Iniciar sesión</h5>
     <div class="card-body text center">
-        <form [formGroup]="signupForm" (ngSubmit)="enviar(signupForm.value )">
+        <form [formGroup]="loginForm" (ngSubmit)="enviar(loginForm.value )">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <div class="form-group col-md-6">
                         <label for="Correo electronico"> Correo Electronico</label>
                         <input formControlName="correo" required pattern="email" type="email" class="form-control" id="Correo electronico" aria-describedby="Correo electronico">
+                        <div class="alert-danger" *ngIf="correo.invalid && (correo.dirty || correo.touched)">
+                            <div class="container-error-message" *ngIf="correo.errors.required">
+                                Correo es obligatorio
+                            </div>
+
+                        </div>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group col-md-6">
                         <label form="contrasenia" for="Contraseña">Contraseña</label>
                         <input formControlName="contrasenia" type="password" class="form-control" required id="exampleInputPassword1">
+                        <div class="alert-danger" *ngIf="contrasenia.invalid && (contrasenia.dirty || contrasenia.touched)">
+                            <div class="container-error-message" *ngIf="contrasenia.errors.required">
+                                Contraseña es obligatoria
+                            </div>
+
+                        </div>
                     </div>
                     <div class="form-group form-check col-md-6">
                         <input type="checkbox" class="form-check-input" id="checkRecordar">
                         <label class="form-check-label" for="checkRecordar">Recordar nombre de usuario </label>
                     </div>
-                    <button type="submit" class="btn btn-primary" [routerLink]="['/home']">Ingresar</button>
+                    <button type="submit" class="btn btn-primary" [routerLink]="['/home']" (click)="Validar()" [disabled]="loginForm.valid">Ingresar</button>
+
                     <small id="textiniciar" class="form-text text-muted">¿No tienes cuenta?</small>
-                    <button type="submit" [routerLink]="['/formulario-usuario']" (click)="getQuery()" [disabled]="signupForm.valid">   
+                    <button type="submit" [routerLink]="['/formulario-usuario']">   
                         Registrarme 
                     </button>
                 </div>

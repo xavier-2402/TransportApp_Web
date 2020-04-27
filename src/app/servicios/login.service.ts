@@ -17,7 +17,7 @@ export class LoginService{
       });
 
     getQuery(query: string) {
-        const url = `http://localhost:8090/${query}`;
+        const url = `http://localhost:9898/${query}`;
         console.log(url)
 
         return this.http.get(url); 
@@ -49,7 +49,7 @@ export class LoginService{
 
     }
     getCategorias(): Observable<any> {
-        const url = 'empleado';      
+        const url = 'persona';      
         return this.postQuery(url);
     }
 
@@ -77,6 +77,7 @@ export class LoginService{
         return localStorage.getItem("accessToken");
       }
 }
+
 export interface Persona {
     correo: string;
     contrasenia: string ;
