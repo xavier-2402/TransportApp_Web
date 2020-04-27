@@ -38,9 +38,9 @@ export class VehiculoService{
       return this.getQuery(url);
     }
 
-    getDate( matriculaget: string, tipoget: string , 
+    getDate(nombre_propietarioget:string, matriculaget: string, tipoget: string , 
         colorget: string , marcaget: string, placaget: string, anioget:number){
-       // this.nombre_propietarioin=nombre_propietarioget;
+        this.nombre_propietarioin=nombre_propietarioget;
         this.matriculain = matriculaget;
         this.tipoin = tipoget;
         this.colorin = colorget;        
@@ -53,7 +53,7 @@ export class VehiculoService{
         console.log(url)
 
         let body = {
-            
+        nombre_propietario:this.nombre_propietarioin,   
         v_matricula: this.matriculain,
         v_tipo: this.tipoin,
         v_color: this.colorin,

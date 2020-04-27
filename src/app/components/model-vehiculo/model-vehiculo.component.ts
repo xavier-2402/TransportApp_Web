@@ -62,7 +62,7 @@ export class ModelVehiculoComponent implements OnInit {
 
   postQuery() {
    
-    this.vehiculoService.getDate(this.vehiculoForm.value.matricula,this.vehiculoForm.value.tipo,
+    this.vehiculoService.getDate(this.vehiculoForm.value.nombre_propietario,this.vehiculoForm.value.matricula,this.vehiculoForm.value.tipo,
       this.vehiculoForm.value.color,this.vehiculoForm.value.marca, this.vehiculoForm.value.placa, 
       this.vehiculoForm.value.anio)
       this.vehiculoService.getVehiculos().subscribe( ( data: Vehiculo) =>{

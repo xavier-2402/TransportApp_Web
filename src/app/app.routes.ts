@@ -9,6 +9,9 @@ import { SolicitarServicioComponent } from './components/solicitar-servicio/soli
 import { ModelVehiculoComponent } from './components/model-vehiculo/model-vehiculo.component';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { HeaderComponent } from './components/header/header.component';
+import { VehiculosComponent } from './components/vehiculos/vehiculos.component';
+import { VehiculoComponent } from './components/vehiculo/vehiculo.component';
+
 
 
 
@@ -21,6 +24,8 @@ const ROUTES: Routes = [
     { path: 'solicitar-servicio', component:SolicitarServicioComponent},
     { path: 'formulario-servicio',component:FormularioServicioComponent},
     { path: 'formulario-servicio/mapa',component:MapaComponent},
+    { path: 'vehiculos',component:VehiculosComponent},
+    { path: 'vehiculo/id',component:VehiculoComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'login' }
 ];
 

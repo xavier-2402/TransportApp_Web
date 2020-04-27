@@ -1,7 +1,7 @@
 export interface Vehiculo {
 
     idVehiculo:number;
-   // v_nombre_propietario:string;
+    v_nombre_propietario:string;
     v_matricula:string;
     v_tipo: string;
     v_color:string;
