@@ -8,19 +8,18 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Injectable({
     
-    providedIn:'root'
+    providedIn: 'root'
 })
 
 export class VehiculoService{
-    cedulain:string;
-    nombrein:string;
-    apellidoin:string;
-    telefonoin:string;
-    direccionin:string;
-    correoin:string;
-    baseURL = environment.apiURL +'vehiculo/'
-    constructor ( private http: HttpClient){
-
+    matriculain: string;
+    tipoin: string;
+    colorin: string;
+    marcain: string;
+    placain: string;
+    anioin: string;
+    baseURL = environment.apiURL + 'vehiculo/';
+    constructor( private http: HttpClient){
     }
 
     
@@ -44,27 +43,25 @@ export class VehiculoService{
         
 
     }
-    getDate(nombreget: string,apellidoget:string,correoget:string,cedulaget:string){
-        this.nombrein = nombreget;
-        this.apellidoin=apellidoget;
-        this.cedulain=cedulaget;
-        //this.telefonoin=telefonoget;
-        this.correoin=correoget;
-       // this.direccionin=direccionget;
-       // this.contraseniain=contraseniaget;
-        
-       
+    getDate(matriculaget: string, tipoget: string , colorget: string , marcaget: string, placaget: string, anioget: string){
+        this.matriculain = matriculaget;
+        this.tipoin = tipoget;
+        this.colorin = colorget;        
+        this.marcain = marcaget;
+        this.placain = placaget;
+        this.anioin = anioget;
     }
     postQuery(query: string) {
         const url = `http://localhost:9898/${query}`;
         console.log(url)
 
         let body = {
-          emp_identificacion:this.cedulain,
-          emp_apellido:this.apellidoin,
-          emp_nombre:this.nombrein,
-          emp_correo:this.correoin,
-
+        v_matricula: this.matriculain,
+        v_tipo: this.tipoin,
+        v_color: this.colorin,
+        v_marca: this.marcain,
+        v_placa: this.placain,
+        v_anio: this.anioin,
 
         }
         let json = JSON.stringify(body);

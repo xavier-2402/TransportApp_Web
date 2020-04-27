@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DireccionService } from '../../servicios/direccion.service';
 import { Direccion } from '../../model/direccion.model';
-
+import {Location} from '@angular/common'
 @Component({
   selector: 'app-modal-direccion',
   templateUrl: './modal-direccion.component.html',
@@ -11,7 +11,8 @@ import { Direccion } from '../../model/direccion.model';
 export class ModalDireccionComponent implements OnInit {
 
   direccionForm:FormGroup;
-  constructor(private _builder: FormBuilder, private direccionService:DireccionService) { 
+  constructor(private _builder: FormBuilder, private direccionService:DireccionService, location: Location) { 
+    
 
     this.direccionForm = this._builder.group(  
       {
@@ -44,7 +45,8 @@ export class ModalDireccionComponent implements OnInit {
           console.log(data);  
         });
         console.log(this.direccionForm.value.nombre);
-    console.log("correcto");
+    console.log(" Direccion correcta");
+    location.reload();
     }
    
     onResetForm(): void {

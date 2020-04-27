@@ -3,7 +3,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"> Tarjeta de Crédito</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle"> Direccion</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -12,7 +12,7 @@
                     <form [formGroup]="direccionForm" (ngSubmit)="enviar(direccionForm.value )">
                         <div class="form-row">
                             <div class="form-group col-md-8 ">
-                                <h5>Forma de pago</h5>
+                                <h5>Datos Direccion</h5>
                                 <div class="form-group ">
                                     <label for="Provincia">Provincia:</label>
                                     <input formControlName="provincia" type="text" name="Provincia" required id="Provincia" class="form-control" placeholder="Provincia">
@@ -63,7 +63,7 @@
                                     </div>
                                 </div>
                                 <button (click)="getQuery()" [disabled]="direccionForm.valid" type="submit" class="btn btn-primary float-xl-none
-                                    t mb-5" [routerLink]="['/home']">Guardar</button>
+                                    t mb-5">Guardar</button>
                             </div>
                         </div>
                     </form>

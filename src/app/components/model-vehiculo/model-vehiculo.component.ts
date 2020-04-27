@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { VehiculoService } from '../../servicios/vehiculo.service';
 import { Vehiculo } from 'src/app/model/vehiculo.model';
-
+import { Tarifa } from 'src/app/model/tarifa.model';
+import { TarifaService } from '../../servicios/tarifa.service';
 @Component({
   selector: 'app-model-vehiculo',
   templateUrl: './model-vehiculo.component.html',
@@ -15,7 +16,7 @@ export class ModelVehiculoComponent implements OnInit {
   tipos;
 
 
-  constructor(private _builder: FormBuilder,private vehiculoService:VehiculoService) {
+  constructor(private _builder: FormBuilder,private vehiculoService: VehiculoService, private tarifaService: TarifaService ) {
     this.colores=["Rojo","Negro","Blanco","Gris","Rojo","Verde"];
     this.marcas=["Chevrolet","Toyota","Mercedes Benz","Hino","Mazda","Hyundai",
     "Nissan","JAC","Ford","Great Wall","Changan","Scrania","Man","Volvo","Isuzu"];
@@ -42,28 +43,33 @@ export class ModelVehiculoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.postQuery();
   }
 
   enviar(values) {
-    console.log(values);
+    //console.log(values);
 
     return values;
 
   }
-
+/*
   postQuery() {
    
     this.vehiculoService.getDate(this.vehiculoForm.value.nombre,this.vehiculoForm.value.placa,
-      this.vehiculoForm.value.marca,this.vehiculoForm.value.matricula)
-        this.vehiculoService.getVehiculos().subscribe((data:Vehiculo)=>{
-          console.log(data);
-          
+      this.vehiculoForm.value.marca,this.vehiculoForm.value.matricula, this.vehiculoForm.value.anio, 
+      this.vehiculoForm.value.color)
+      this.vehiculoService.getVehiculos().subscribe( ( data: Vehiculo) =>{
+          console.log(data); 
         });
         console.log(this.vehiculoForm.value.nombre);
     console.log("correcto");
     }
-   
-
-
-}
+   */
+  createTarifa(){
+    this.tarifaService.getDate(this.vehiculoForm.value.descripcion, this.vehiculoForm.value.tarifa)
+  this.tarifaService.getTarifas().subscribe((data:Tarifa)=>{
+    
+    });
+    console.log(this.vehiculoForm.value.tarifa, this.vehiculoForm.value.descripcion);
+    console.log( " correcto " );
+  }
+ }

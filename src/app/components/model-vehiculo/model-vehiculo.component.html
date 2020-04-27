@@ -37,12 +37,13 @@
                             <div class="form-group col-md-6">
                                 <div class="form-group ">
                                     <label for="Placa">Placa:</label>
+                                    <input formControlName="placa" type="text" name="Placa" id="Placa" required class="form-control" placeholder="Placa">
                                     <div class="alert-danger" *ngIf="placa.invalid && (placa.dirty || matricula.touched)">
                                         <div class="container-error-message" *ngIf="placa.errors.required">
                                             Placa es obligatoria
                                         </div>
                                     </div>
-                                    <input type="text" name="Placa" id="Placa" required class="form-control" placeholder="Placa">
+
                                 </div>
                                 <div class="form-group ">
                                     <label for="Marca"> Marca:</label>
@@ -114,7 +115,7 @@
                             <div class="form-group col-md-6">
 
                                 <label for="Tarifa"> Tarifa:</label>
-                                <input formControlName="tarifa" type="text" name="Tarifa" id="Tarifa" required class="form-control" placeholder="Tarifa">
+                                <input formControlName="tarifa" type="number" name="Tarifa" id="Tarifa" required class="form-control" placeholder="Tarifa">
 
                                 <div class="alert-danger" *ngIf="tarifa.invalid && (tarifa.dirty || tarifa.touched)">
                                     <div class="container-error-message" *ngIf="tarifa.errors.required">
@@ -124,7 +125,7 @@
                             </div>
 
                         </div>
-                        <button (click)=" postQuery() " [disabled]="vehiculoForm.invalid" type="submit " class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
+                        <button (click)="createTarifa()" [disabled]="vehiculoForm.invalid" type="submit " class="btn btn-outline-primary float-right mb-5 ">Guardar </button>
                     </form>
                 </div>
             </div>
